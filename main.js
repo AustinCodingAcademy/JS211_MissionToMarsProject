@@ -1,6 +1,8 @@
 'use strict';
 const assert = require('assert');
 
+
+
 // This is an object that has types of jobs and the values each provide.
 const jobTypes = {
   pilot: 'MAV',
@@ -8,11 +10,58 @@ const jobTypes = {
   commander: 'Main Ship',
   programmer: 'Any Ship!'
 };
+//  CrewMember class with all of it's values.
+class CrewMember {
+  constructor(name, job, specialSkill, ship) {
+    this.name = name;
+    this.job = job;
+    this.specialSkill = specialSkill;
+    this.ship = null;
+  }
+  // enterShip is a function.
+  enterShip = (mav) => {
+    this.ship = mav;
+    mav.crew.push(crewMember1);
+  }
+}
 
-// Your code will go here
+// Ship class with all of it's values.
+class Ship {
+  constructor(name, type, ability, crew) {
+      this.name = name;
+      this.type = type;
+      this.ability = ability;
+      this.crew = [];
+  }
 
+  // missionStatement = () => {
+  //   return "Can't perform a mission yet.";
+  // }
+  // get missionStatement() {
+  //   if (crewMember1) {
+  //     return `${mav.ability}`;
+  //   }
+  //   else if (crewMember2) {
+  //     return `${hermes.ability}`;
+  //   }
+  // }
+}
 
+// Creates a crew member by calling CrewMember class.
+const crewMember1 = new CrewMember("Rick Martinez", "pilot", "chemistry");
+const crewMember2 = new CrewMember('Commander Lewis', 'commander', 'geology');
 
+// Creates the two different ship with their own values.
+let mav = new Ship("Mars Ascent Vehicle", "MAV", "Ascend into low orbit");
+let hermes = new Ship('Hermes', 'Main Ship', 'Interplanetary Space Travel');
+
+// Unit Test 2 allows crew member to enter Ship
+crewMember1.enterShip(mav);
+
+// mav.missionStatement();
+// hermes.missionStatement();
+// crewMember1.enterShip(mav);
+// crewMember2.enterShip(hermes);
 
 
 
