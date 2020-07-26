@@ -11,10 +11,23 @@ const jobTypes = {
 
 // Your code will go here
 
+const crewMember = () => {
+ // this creates a CrewMember and passes the following arguments into its constructor:
+   // 'name', 'job', 'specialty'
+}
 
+const canEnterShip = () => {
+//this creates a new ship 
+// Can you build a class that can be called so that this Ship can be built?
+}
 
+const ship = () => {
+  //should have a name, a type, an ability and an empty crew upon instantiation
+}
 
-
+const returnMissionStatement = () => {
+   //which will return a correct* mission statement 
+}
 
 
 // Begin by reading the tests and building a function that will full each one.
