@@ -11,26 +11,41 @@ const jobTypes = {
 
 // Your code will go here
 
-const crewMember = () => {
- // this creates a CrewMember and passes the following arguments into its constructor:
-   // 'name', 'job', 'specialty' 
+// this creates a CrewMember and passes the following arguments into its constructor:
+// 'name', 'job', 'specialty'
+class CrewMember {
+ constructor (name, job, specialSkill, ship) {
+  this.name = name;
+  this.job = job;
+  this.specialSkill = specialSkill;
+  this.ship = ship;
+}
+enterShip(x) {
+  this.ship =  x;
+  x.crew.push(this);
+}
 }
 
-const canEnterShip = () => {
-//this creates a new ship yay
-// Can you build a class that can be called so that this Ship can be built?
-}
+class Ship {
+  constructor(name, type, ability){
+    this.name = name;
+    this.type = type;
+    this.ability = ability;
+    this.crew = [];
+  }
+  missionStatement() {
+    if (this.crew.length == 0) {
+      return "Can't perform a mission yet."
+    } else {
+      return this.ability
+      }
+    }
+  }
 
-const ship = () => {
-  //should have a name, a type, an ability and an empty crew upon instantiation
-}
-
-const returnMissionStatement = () => {
-   //which will return a correct* mission statement 
-}
 
 
-// Begin by reading the tests and building a function that will full each one.
+
+// Begin by reading the tests and building a function that will fullfil each one.
 // As you build, you might not have to build them in order, maybe you do...
 // These are the tests
 if (typeof describe === 'function'){
