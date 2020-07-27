@@ -13,11 +13,11 @@ const jobTypes = {
 
 const crewMember = () => {
  // this creates a CrewMember and passes the following arguments into its constructor:
-   // 'name', 'job', 'specialty'
+   // 'name', 'job', 'specialty' 
 }
 
 const canEnterShip = () => {
-//this creates a new ship 
+//this creates a new ship yay
 // Can you build a class that can be called so that this Ship can be built?
 }
 
