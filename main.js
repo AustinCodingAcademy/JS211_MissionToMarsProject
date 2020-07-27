@@ -20,16 +20,13 @@ class CrewMember {
     this.specialSkill = specialSkill;
     this.ship = null;
   }
-  enterShip = (arr) => {
-    this.ship = arr;
-    arr.crew.push(CrewMember);
-  }
-  
-  
-}
-
-// Make sure CrewMembers can enter Ships.
+  // Make sure CrewMembers can enter Ships.
 //enter ship function
+  enterShip = (ship) => {
+    this.ship = ship;
+    ship.crew.push(this)
+}
+}
 
 
 
@@ -41,6 +38,17 @@ class Ship {
     this.type = type;
     this.ability = ability;
     this.crew = crew = [];
+  }
+  missionStatement = () => {
+    return "Can't perform a mission yet";
+  }
+  get missionStatement() {
+    if (crewMember1) {
+      return `${mav.ability}`;
+    }
+    else if (crewMember2) {
+      return `${hermes.ability}`
+    }
   }
 }
 
