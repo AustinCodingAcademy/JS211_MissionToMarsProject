@@ -12,6 +12,18 @@ const jobTypes = {
 // Your code will go here
 
 
+// Build a class for CrewMember.
+
+
+
+// Build a class for Ship.
+
+
+// Make sure CrewMembers can enter Ships.
+
+
+// Make sure to return a mission statement.
+
 
 
 
