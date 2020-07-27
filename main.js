@@ -10,7 +10,13 @@ const jobTypes = {
 };
 
 // Your code will go here
-
+class bob {
+  constructor(name, job, specialSkill, dob){
+    this.name = 'bob';
+    this.job = '6ft';
+    this.specialSkill = '250';
+    this.ship = '';
+  }
 
 
 
