@@ -12,6 +12,55 @@ const jobTypes = {
 // Your code will go here
 
 
+// Build a class for CrewMember.
+class CrewMember {
+  constructor(name, job, specialSkill, ship) {
+    this.name = name;
+    this.job = job;
+    this.specialSkill = specialSkill;
+    this.ship = null;
+  }
+  // Make sure CrewMembers can enter Ships.
+//enter ship function
+  enterShip = (ship) => {
+    this.ship = ship;
+    ship.crew.push(this)
+}
+}
+
+
+
+// Build a class for Ship.
+
+class Ship {
+  constructor (name, type, ability, crew) {
+    this.name = name;
+    this.type = type;
+    this.ability = ability;
+    this.crew  = [];
+  }
+  missionStatement () {
+    if (this.crew.length == 0) {
+      return "Can't perform a mission yet."
+    } else {
+      return this.ability
+    }
+}
+}
+
+//Need to make NEW classes for CrewMember and Ship. They do not exist yet
+const crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
+const crewMember2 = new CrewMember('Commander Lewis', 'commander', 'geology');
+
+let mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
+let hermes = new Ship('Hermes', 'Main Ship', 'Interplanetary Space Travel');
+
+
+//call on enter ship
+crewMember1.enterShip(mav)
+crewMember2.enterShip(hermes)
+// Make sure to return a mission statement.
+
 
 
 
