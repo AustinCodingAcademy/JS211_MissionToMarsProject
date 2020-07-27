@@ -37,19 +37,15 @@ class Ship {
     this.name = name;
     this.type = type;
     this.ability = ability;
-    this.crew = crew = [];
+    this.crew  = [];
   }
-  missionStatement = () => {
-    return "Can't perform a mission yet";
-  }
-  get missionStatement() {
-    if (crewMember1) {
-      return `${mav.ability}`;
+  missionStatement () {
+    if (this.crew.length == 0) {
+      return "Can't perform a mission yet."
+    } else {
+      return this.ability
     }
-    else if (crewMember2) {
-      return `${hermes.ability}`
-    }
-  }
+}
 }
 
 //Need to make NEW classes for CrewMember and Ship. They do not exist yet
