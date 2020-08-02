@@ -33,13 +33,13 @@ class Ship {
   }
   
 
-missionStatement() {
-  if(this.crew.length == 0) {
-    return "Can't perform a mission yet." 
-  } else {
+  missionStatement() {
+    if(this.crew.length == 0) {
+      return "Can't perform a mission yet." 
+    } else {
       return this.ability
+    }
   }
-}
 }
 
 
