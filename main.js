@@ -17,7 +17,7 @@ const jobTypes = {
 
 
 
-// Begin by reading the tests and building a function that will full each one.
+// Begin by reading the tests and building a function that will fulfill the criteria for each one.
 // As you build, you might not have to build them in order, maybe you do...
 // These are the tests
 if (typeof describe === 'function'){
