@@ -11,11 +11,69 @@ const jobTypes = {
 
 // Your code will go here
 
+class Ship {
+  constructor(name, type, ability , crew){
+    this.name = name;
+    this.type = type;
+    this.ability = ability;
+    this.crew = []
+  }
+
+missionStatement = () => {
+    if (this.crew.length === 0) {
+      return "Abort mission.";
+    } 
+    else if (this.crew.length !== 0 && this.name === 'Mars Ascent Vehicle') {
+      return "Ascend into low orbit"
+    } 
+    else if (this.crew.length !== 0 && this.name === 'Hermes') {
+    return "Interplanetary Space Travel"
+    }
+}  
+
+class CrewMember {
+  constructor(name, job, specialSkill , ship){
+    this.name = name;
+    this.job = job;
+    this.specialSkill = specialSkill;
+    this.ship = ship;
+  }
+
+
+  enterShip = (ship) => {
+    this.ship = ship;
+    this.ship.crew.push(this);
+  }
+
+}
 
 
 
 
 
+// class Ship {
+//   constructor(name, type, ability , crew){
+//     this.name = name;
+//     this.type = type;
+//     this.ability = ability;
+//     this.crew = []
+//   }
+
+//   missionStatement = () => {
+//     if (this.crew.length === 0) {
+//       return "Abort mission.";
+//     } 
+//     else if (this.crew.length !== 0 && this.name === 'Mars Ascent Vehicle') {
+//       return "Ascend into low orbit"
+//     } 
+//     else if (this.crew.length !== 0 && this.name === 'Hermes') {
+//     return "Interplanetary Space Travel"
+//     }
+// }
+
+
+ const CrewMember1 = new CrewMember ('Rick Martinez', 'pilot', 'chemistry');
+  
 
 // Begin by reading the tests and building a function that will full each one.
 // As you build, you might not have to build them in order, maybe you do...
