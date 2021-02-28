@@ -1,5 +1,6 @@
 'use strict';
 const assert = require('assert');
+const { join } = require('path');
 
 // This is an object that has types of jobs and the values each provide.
 const jobTypes = {
@@ -9,8 +10,73 @@ const jobTypes = {
   programmer: 'Any Ship!'
 };
 
-// Your code will go here
+class CrewMember{
+  
+  name;
+  job; 
+  specialSkill; 
+  ship;
+  
 
+  constructor(inputName, inputJob, inputSpecialSkill){
+    this.name = inputName; 
+    this.job = inputJob;
+    this.specialSkill = inputSpecialSkill;
+    this.ship = null; 
+  }
+
+  enterShip(shipName){
+    this.ship = shipName; 
+    shipName.crew.push(this);  //access crew property in ship object and push in the new instance 
+  }
+}
+
+class Ship{
+
+  name; 
+  type;
+  ability;
+  crew;  
+
+  constructor(inputShipName, inputType, inputAbility){
+    this.name = inputShipName;
+    this.type = inputType;
+    this.ability = inputAbility;
+    this.crew = []; 
+  }
+
+  missionStatement(){
+    if(this.crew.length === 0){
+      return "Can't perform a mission yet."
+    }else{
+      return this.ability; 
+    }
+  }
+}
+
+
+let mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
+let hermes = new Ship('Hermes', 'Main Ship', 'Interplanetary Space Travel');
+console.log(mav); 
+console.log(hermes); 
+console.log(mav.missionStatement());
+console.log(hermes.missionStatement());
+
+
+
+let johnLennon = new CrewMember('John Lennon', 'pilot', 'plays guitar');
+let crewMember2 = new CrewMember('Commander Lewis', 'commander', 'geology');
+console.log(johnLennon.enterShip(mav));
+console.log(crewMember2.enterShip(hermes));
+console.log(mav.missionStatement());
+console.log(hermes.missionStatement());
+
+
+
+
+
+
+ 
 
 
 
