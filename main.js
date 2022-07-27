@@ -10,7 +10,46 @@ const jobTypes = {
 };
 
 // Your code will go here
+//1. Describe crew member
+//1a. A crew member should have a name, a job, a specialSkill and ship upon instantiation.
 
+class CrewMember {
+  constructor(name, job, specialSkill, ship) {
+    this.name = name;
+    this.job = job;
+    this.specialSkill = specialSkill;
+    this.ship = null;
+  }
+  enterShip(ship) {
+    this.ship = ship;
+    ship.crew.push(this);
+  }
+}
+
+//2. Describe ship
+//2a. A ship should have a name, a type, an ability and an empty crew upon instantiation. It can return a mission statement correctly.
+//2b. A crew member must be able to enter a ship.
+//2c. If a ship has no crew it must return 'Can't perform a mission yet.'
+
+class Ship {
+  constructor(name, type, ability, crew) {
+    this.name = name;
+    this.type = type;
+    this.ability = ability;
+    this.crew = [];
+  }
+
+  missionStatement() {
+    if (this.crew.length === 0) {
+      return "Can't perform a mission yet.";
+    } else {
+      return `${this.ability}`;
+    }
+  }
+}
+
+//3. Create a function to create a new crew member
+//4. Create a function to create a new ship
 
 
 
