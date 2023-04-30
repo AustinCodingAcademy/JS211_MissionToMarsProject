@@ -11,21 +11,53 @@ const jobTypes = {
 
 // Your code will go here
 
+class CrewMember {
+
+  constructor(name, job, specialSkill, ship){
+this.name = name,
+this.job = job,
+this.specialSkill = specialSkill,
+this.ship = null
+
+  }
+
+  enterShip(x){
+    this.ship = x
+    x.crew.push(this)
+    
+    }
+}
 
 
+class Ship{
+
+constructor(name, type, ability, crew){
+
+this.name = name,
+this.type = type,
+this.ability = ability
+this.crew = []
+}
+  missionStatement(){
+    if(this.crew.length == 0){
+      return "Can't perform a mission yet."
+    }
+    else{
+        return this.ability
+
+    }
+  }
+
+}
 
 
-
-
-// Begin by reading the tests and building a function that will full each one.
-// As you build, you might not have to build them in order, maybe you do...
-// These are the tests
 if (typeof describe === 'function'){
   describe('CrewMember', function(){
     it('should have a name, a job, a specialSkill and ship upon instantiation', function(){
       // this creates a CrewMember and passes the following arguments into its constructor:
       // 'Rick Martinez', 'pilot', 'chemistry'
       const crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
+      console.log(crewMember1.name)
       assert.equal(crewMember1.name, 'Rick Martinez');
       assert.equal(crewMember1.job, 'pilot');
       assert.equal(crewMember1.specialSkill, 'chemistry');
@@ -40,12 +72,14 @@ if (typeof describe === 'function'){
       assert.equal(crewMember1.ship, mav);
       assert.equal(mav.crew.length, 1);
       assert.equal(mav.crew[0], crewMember1);
+
     });
   });
 
   describe('Ship', function(){
     it('should have a name, a type, an ability and an empty crew upon instantiation', function(){
       let mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
+      console.log(mav.crew.length)
       assert.equal(mav.name, 'Mars Ascent Vehicle');
       assert.equal(mav.type, 'MAV');
       assert.equal(mav.ability, 'Ascend into low orbit');
